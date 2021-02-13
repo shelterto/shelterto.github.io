@@ -1,6 +1,7 @@
 .root{
   --primary-color: #FFFCF5;
   --secondary--color: #000D53;
+  --lightblue: #7D9AFF;
 }
 
 @media (prefers-color-scheme: dark) {

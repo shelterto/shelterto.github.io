@@ -1,7 +1,34 @@
-h1 {
+.infoCard{
+    background-color: white;
+    width: 941px;
+    height: 294px;
+    margin-bottom: 20px;
 }
 
-.infoCard{
-    background-color: grey;
-    width: 54rem;
+.textGrid{
+    text-align: right;
+    border-right: 3px #000D53 solid;
+}
+
+.occupancyGrid{
+    text-align: left;
+    padding-left: 50px !important;
+}
+
+.col-md-3{
+
+}
+
+.submitBtn {
+    background-color: #7D9AFF;
+    border: none;
+    color:  white;
+    font-size: 20px !important;
+    border-radius: 7px;
+    width: 250px;
+    height: 50px;
+}
+
+.shelterType{
+    font-size: 20px;
 }
