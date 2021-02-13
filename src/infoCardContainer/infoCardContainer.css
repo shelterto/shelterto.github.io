@@ -1,5 +1,24 @@
 .infoCardContainer{
     background-color: #000D53;
+    height: 750px;
+    border: 20px #000D53 solid ;
     width:fit-content;
-    padding: 30px;
+    padding: 15px 20px;
+    overflow: auto;
+
+}
+
+/* width */
+#like-scroll::-webkit-scrollbar {
+    width: 9px;
+}
+
+/* Track */
+#like-scroll::-webkit-scrollbar-track {
+background: #7D9AFF;
+}
+
+/* Handle */
+#like-scroll::-webkit-scrollbar-thumb {
+background: black;
 }
