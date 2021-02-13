@@ -1,7 +1,8 @@
 .donoCard{
-    width: 231px;
+    width: 200px;
     height: 196px;
-    
+    border-radius: 7px;
+    border: none;
 }
 
 .donoImg{

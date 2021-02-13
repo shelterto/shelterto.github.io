@@ -1,5 +1,6 @@
 .root{
-  --primary-color: #F5f5f5
+  --primary-color: #FFFCF5;
+  --secondary--color: #000D53;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -10,6 +11,7 @@
 
 .App {
   text-align: center;
+  background-color: var(--primary-color);
 }
 
 .App-logo {

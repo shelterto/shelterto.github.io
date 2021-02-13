@@ -4,11 +4,12 @@ const DonoCard = ({DonoText, DonoColor, DonoImg}) => {
     
 
     return(
-        <button className="donoCard" style={{backgroundColor: DonoColor}}> 
+        <button type="button" class="btn donoCard" style={{backgroundColor:DonoColor}}>
             <h1> {DonoText}  </h1>
-            <img className = 'donoImg' src={DonoImg} />
+            <img className = 'donoImg' src={DonoImg}></img>
         </button>
-    )
+    );
+       
 }
 
 export default DonoCard;
