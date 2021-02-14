@@ -1,4 +1,6 @@
 .mapContainer{
    align-items: center;
+   margin-left: 100px; 
+   border-radius: 0 0 7px 7px;
    
 }
