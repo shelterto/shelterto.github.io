@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react';import '../infoCardContainer/in
 import InfoCard from '../infoCard/InfoCard'
 import LocationHeader from "../locationHeader/LocationHeader"
 import algoliasearch from 'algoliasearch/lite';
+import Geocode from "react-geocode";
 import {
   InstantSearch,
   InfiniteHits,
@@ -14,6 +15,16 @@ import {
 } from 'react-instantsearch-dom';
 import PropTypes from 'prop-types';
 import GoogleMap from '../googleMap/GoogleMap'
+
+
+Geocode.setApiKey("AIzaSyCgvjTPE6Hqy9fEVo4332nys7Cpunn06oE");
+
+Geocode.setLanguage("en");
+
+Geocode.setLocationType("ROOFTOP");
+
+Geocode.enableDebug();
+
 
 const searchClient = algoliasearch('A8LQ861XZY', '0b476f98a04f33f57d6f0b459a403111');
 const SearchBox = ({ currentRefinement, isSearchStalled, refine }) => (
@@ -34,6 +45,8 @@ const CustomSearchBox = connectSearchBox(SearchBox);
 const InfoCardContainer = () => {
     const [items, setItems] = useState([]);
     const [address, setAddress] = useState("Please select a location");
+    const [lat, setLat] = useState(0);
+    const [lng, setLng] = useState(0);
 
     useEffect (() => {
         const fetchData = async () => {
@@ -45,10 +58,22 @@ const InfoCardContainer = () => {
         console.log(items)
       },[])
 
+      
+
       const changeLocationHeader = (address) => {
-        setAddress(address);
-        console.log(address)
+        Geocode.fromAddress(address).then(
+          (response) => {
+            const { lat, lng } = response.results[0].geometry.location;
+            setLat(lat);
+            setLng(lng);
+            setAddress(address);
+          },
+        );  
+        console.log(lat,lng)
+        console.log(address);
     }
+
+
 
     function Hit(props) {
         return (  
@@ -80,7 +105,7 @@ const InfoCardContainer = () => {
             </div>
             <div classname="col-md-6">
                 <LocationHeader shelterAddress={address} />
-                <GoogleMap shelterAddress={address}/>
+                <GoogleMap shelterAddress={address} lat={lat} lng={lng}/>
             </div>
         </div>
     </div>

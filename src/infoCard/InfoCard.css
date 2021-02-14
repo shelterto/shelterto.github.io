@@ -55,6 +55,11 @@ h3 {
   height: 50px;
 }
 
+.submitBtn:focus{
+  background-color: rgb(169, 224, 98);;
+}
+
+
 .shelterType {
   /*Displays the shelter type to the user*/
   font-size: 20px;

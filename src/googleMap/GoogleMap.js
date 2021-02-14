@@ -1,15 +1,6 @@
 import React, { Component, useEffect } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
-import Geocode from "react-geocode";
 import '../googleMap/GoogleMap.css'
-
-Geocode.setApiKey("AIzaSyCgvjTPE6Hqy9fEVo4332nys7Cpunn06oE");
-
-Geocode.setLanguage("en");
-
-Geocode.setLocationType("ROOFTOP");
-
-Geocode.enableDebug();
 
 const mapStyles = {
     width: "643px",
@@ -17,29 +8,19 @@ const mapStyles = {
 };
 
 export class GoogleMap extends Component { 
-
-  render() {
+    render() {
+    const latt = this.props.lat;
+    const lngg = this.props.lng;
 
     const shelterAddress = this.props.shelterAddress
     var address = shelterAddress;
-    var latt =43.653530;
-    var lngg =-79.383918;
 
-    Geocode.fromAddress(address).then(
-        (response) => {
-          const { lat, lng } = response.results[0].geometry.location;
-          latt=lat;
-          lngg=lng;
-          console.log(latt, lngg);
-    
-        },
-      );
-
+   
     return (
         <div className="mapContainer">
         <Map
         google={this.props.google}
-        zoom={14}
+        zoom={16}
         style={mapStyles}
         center={
             {
@@ -49,9 +30,6 @@ export class GoogleMap extends Component {
         }
         >
           <Marker position={{lat: latt, lng: lngg}} />
-          <Marker position={{lat: 43.657050, lng: -79.383861}} />
-          {/* <Marker position={{lat: latt, lng: lngg}} />
-          <Marker position={{lat: latt, lng: lngg}} /> */}
       </Map>
         </div>
       
