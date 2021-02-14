@@ -1,34 +1,52 @@
-.infoCard{
+.infoCard{                                   /*This is the main background for the card WHITE PART*/
     background-color: white;
-    width: 941px;
-    height: 294px;
-    margin-bottom: 20px;
+    width: 100%;
+    height: 42%;
+    margin-bottom: 5%;
+    border-radius: 7px;
+    /*padding: 0;*/
 }
 
-.textGrid{
+.textGrid{                                  /*This Aligns the NAME OF THE SHELTER to the right*/
     text-align: right;
-    border-right: 3px #000D53 solid;
+    margin-top: 7%;
 }
 
-.occupancyGrid{
+.occupancyGrid{                             /*This Aligns the occupancy to the left*/ /*LONG NAMES FOR FUCKING UHHHHHHHHHHHHHHHHHHHHHHHHH HOMELESS SHELTERS BREAKS CODE*/
     text-align: left;
-    padding-left: 50px !important;
+    margin-top: 7%;
+    border-left: 4px #000D53 solid;
+
 }
 
 .col-md-3{
-
 }
 
-.submitBtn {
+.submitBtn {                                /*This is the location button styling*/
     background-color: #7D9AFF;
     border: none;
     color:  white;
     font-size: 20px !important;
     border-radius: 7px;
-    width: 250px;
+    width: 300px;
     height: 50px;
 }
 
-.shelterType{
+.shelterType{                                /*Displays the shelter type to the user*/
     font-size: 20px;
+}
+
+.occupancygreen{
+    padding-right: 2%;
+    color: green;
+}
+
+.occupancyred{
+    padding-right: 2%;
+    color: red;
+}
+
+.occupancygray{
+    padding-right: 2%;
+    color: gray;
 }
