@@ -33,11 +33,14 @@ const SearchBox = ({ currentRefinement, isSearchStalled, refine }) => (
   <form noValidate action="" role="search">
     <input
       class="searchBox"
+      placeholder="Search for a shelter..."
       type="search"
       value={currentRefinement}
       onChange={(event) => refine(event.currentTarget.value)}
     />
-    <button onClick={() => refine("")}>Reset query</button>
+    <button class="resetQuery" onClick={() => refine("")}>
+      Reset query
+    </button>
     {isSearchStalled ? "My search is stalled" : ""}
   </form>
 );
