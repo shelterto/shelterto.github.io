@@ -1,7 +1,7 @@
 import React, { Component, useEffect } from 'react';
 import { Map, GoogleApiWrapper, Marker } from 'google-maps-react';
 import Geocode from "react-geocode";
-
+import '../googleMap/GoogleMap.css'
 
 Geocode.setApiKey("AIzaSyCgvjTPE6Hqy9fEVo4332nys7Cpunn06oE");
 
@@ -31,11 +31,13 @@ export class GoogleMap extends Component {
           latt=lat;
           lngg=lng;
           console.log(latt, lngg);
+    
         },
       );
 
     return (
-      <Map
+        <div className="mapContainer">
+        <Map
         google={this.props.google}
         zoom={14}
         style={mapStyles}
@@ -45,14 +47,14 @@ export class GoogleMap extends Component {
             lng: lngg
             }
         }
-      >
-          <Marker
-            position={{ 
-                lat: latt,
-                lng: lngg
-             }}
-        />
+        >
+          <Marker position={{lat: latt, lng: lngg}} />
+          <Marker position={{lat: 43.657050, lng: -79.383861}} />
+          {/* <Marker position={{lat: latt, lng: lngg}} />
+          <Marker position={{lat: latt, lng: lngg}} /> */}
       </Map>
+        </div>
+      
     );
   }
 }
