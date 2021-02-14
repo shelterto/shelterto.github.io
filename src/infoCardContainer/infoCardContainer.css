@@ -56,7 +56,12 @@
 }
 
 .ais-InfiniteHits-loadMore {
-  background-color: lightgrey;
+  background-color: #7d9aff;
   border-radius: 7px;
   border: none;
+  color: white;
+  padding: 7px 15px;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 20px;
 }
