@@ -5,6 +5,7 @@
   height: 20%;
   border-radius: 7px;
   padding: 5%;
+  margin-top: 5%;
 }
 h1 {
   font-size: 30px !important;
@@ -18,13 +19,12 @@ h3 {
 .textGrid {
   /*This Aligns the NAME OF THE SHELTER to the right*/
   text-align: right;
-  margin-top: 7%;
 }
 
 .occupancyGrid {
   /*This Aligns the occupancy to the left*/ /*LONG NAMES FOR FUCKING UHHHHHHHHHHHHHHHHHHHHHHHHH HOMELESS SHELTERS BREAKS CODE*/
   text-align: left;
-  margin-top: 7%;
+
   border-left: 4px #000d53 solid;
 }
 
@@ -59,7 +59,7 @@ h3 {
   /*Displays the shelter type to the user*/
   font-size: 20px;
 }
-
+/* TODO: ADD PADDING */
 .occupancygreen {
   padding-right: 5px;
   fill: green;
