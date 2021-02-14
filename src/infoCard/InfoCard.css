@@ -27,7 +27,7 @@ h3 {
 }
 
 .occupancyGrid {
-  /*This Aligns the occupancy to the left*/ 
+  /*This Aligns the occupancy to the left*/
   text-align: left;
   border-left: 3px #000d53 solid;
 }
@@ -59,27 +59,15 @@ h3 {
   height: 50px;
 }
 
-.submitBtn:focus{
-  background-color: rgb(169, 224, 98);;
+.submitBtn:focus {
+  background-color: #fc7051;
 }
-
 
 .shelterType {
   /*Displays the shelter type to the user*/
   font-size: 20px;
 }
-/* TODO: ADD PADDING */
-.occupancygreen {
-  padding-right: 5px;
-  fill: green;
-}
 
-.occupancyred {
-  margin-right: 5px;
-  fill: red;
-}
-
-.occupancygray {
-  padding-right: 2%;
-  fill: gray;
+.fa-bed {
+  padding-right: 4px;
 }

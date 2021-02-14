@@ -8,21 +8,21 @@ const InfoCard = ({
   shelterCapacity,
   onClick,
 }) => {
-  var str1 = "#D7D7D7";
-  var str2 = "#D7D7D7";
-  var str3 = "#D7D7D7";
+  var str1 = "#E4E3E3";
+  var str2 = "#E4E3E3";
+  var str3 = "#E4E3E3";
   if (shelterOccupancy == 1) {
-    str1 = "#A9E062";
-    str2 = "#D7D7D7";
-    str3 = "#D7D7D7";
+    str1 = "#B4E07B";
+    str2 = "#E4E3E3";
+    str3 = "#E4E3E3";
   } else if (shelterOccupancy == 2) {
-    str1 = "#F9BE26";
-    str2 = "#F9BE26";
-    str3 = "#D7D7D7";
+    str1 = "#FFCF52";
+    str2 = "#FFCF52";
+    str3 = "#E4E3E3";
   } else {
-    str1 = "#F63D3D";
-    str2 = "#F63D3D";
-    str3 = "#F63D3D";
+    str1 = "#F45959";
+    str2 = "#F45959";
+    str3 = "#F45959";
   }
   return (
     <div className="infoCard override">
