@@ -1,7 +1,8 @@
-import React, {useState, useEffect} from 'react';import '../infoCardContainer/infoCardContainer.css'
-import InfoCard from '../infoCard/InfoCard'
-import LocationHeader from "../locationHeader/LocationHeader"
-import algoliasearch from 'algoliasearch/lite';
+import React, { useState, useEffect } from "react";
+import "../infoCardContainer/infoCardContainer.css";
+import InfoCard from "../infoCard/InfoCard";
+import LocationHeader from "../locationHeader/LocationHeader";
+import algoliasearch from "algoliasearch/lite";
 import Geocode from "react-geocode";
 import {
   InstantSearch,
@@ -16,7 +17,6 @@ import {
 import PropTypes from "prop-types";
 import GoogleMap from "../googleMap/GoogleMap";
 
-
 Geocode.setApiKey("AIzaSyCgvjTPE6Hqy9fEVo4332nys7Cpunn06oE");
 
 Geocode.setLanguage("en");
@@ -24,7 +24,6 @@ Geocode.setLanguage("en");
 Geocode.setLocationType("ROOFTOP");
 
 Geocode.enableDebug();
-
 
 const searchClient = algoliasearch(
   "A8LQ861XZY",
@@ -36,12 +35,9 @@ const SearchBox = ({ currentRefinement, isSearchStalled, refine }) => (
       class="searchBox"
       type="search"
       value={currentRefinement}
-      placeholder="Search for a shelter..."
       onChange={(event) => refine(event.currentTarget.value)}
     />
-    <button className="resetQuery" onClick={() => refine("")}>
-      ✕
-    </button>
+    <button onClick={() => refine("")}>Reset query</button>
     {isSearchStalled ? "My search is stalled" : ""}
   </form>
 );
@@ -49,10 +45,10 @@ const SearchBox = ({ currentRefinement, isSearchStalled, refine }) => (
 const CustomSearchBox = connectSearchBox(SearchBox);
 
 const InfoCardContainer = () => {
-    const [items, setItems] = useState([]);
-    const [address, setAddress] = useState("Please select a location");
-    const [lat, setLat] = useState(0);
-    const [lng, setLng] = useState(0);
+  const [items, setItems] = useState([]);
+  const [address, setAddress] = useState("Please select a location");
+  const [lat, setLat] = useState(0);
+  const [lng, setLng] = useState(0);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -66,35 +62,31 @@ const InfoCardContainer = () => {
     console.log(items);
   }, []);
 
-      
+  const changeLocationHeader = (address) => {
+    Geocode.fromAddress(address).then((response) => {
+      const { lat, lng } = response.results[0].geometry.location;
+      setLat(lat);
+      setLng(lng);
+      setAddress(address);
+    });
+    console.log(lat, lng);
+    console.log(address);
+  };
 
-      const changeLocationHeader = (address) => {
-        Geocode.fromAddress(address).then(
-          (response) => {
-            const { lat, lng } = response.results[0].geometry.location;
-            setLat(lat);
-            setLng(lng);
-            setAddress(address);
-          },
-        );  
-        console.log(lat,lng)
-        console.log(address);
-    }
-
-
-
-    function Hit(props) {
-        return (  
-          <div className="infoCardContainer"  id="like-scroll">
-            <InfoCard key={props.hit.objectID} shelterName={props.hit.FACILITY_NAME} shelterType={props.hit.SECTOR} shelterOccupancy={props.hit.OCCUPANCY} shelterCapacity={props.hit.CAPACITY} onClick={() => changeLocationHeader(props.hit.SHELTER_ADDRESS
-        )}/>
-          </div>
-        );
-      }
-      
-      Hit.propTypes = {
-        hit: PropTypes.object.isRequired,
-      };
+  function Hit(props) {
+    return (
+      <div className="infoCardContainer" id="like-scroll">
+        <InfoCard
+          key={props.hit.objectID}
+          shelterName={props.hit.FACILITY_NAME}
+          shelterType={props.hit.SECTOR}
+          shelterOccupancy={props.hit.OCCUPANCY}
+          shelterCapacity={props.hit.CAPACITY}
+          onClick={() => changeLocationHeader(props.hit.SHELTER_ADDRESS)}
+        />
+      </div>
+    );
+  }
 
   Hit.propTypes = {
     hit: PropTypes.object.isRequired,
@@ -108,14 +100,16 @@ const InfoCardContainer = () => {
             <InstantSearch indexName="demo_geo_3" searchClient={searchClient}>
               <div className="right-panel">
                 <CustomSearchBox />
-                <div className="infoCardContainer override" id="like-scroll">
+                <div className="infoCardContainer" id="like-scroll">
                   <InfiniteHits hitComponent={Hit} />
                 </div>
-            </div>
-            <div classname="col-md-6">
-                <LocationHeader shelterAddress={address} />
-                <GoogleMap shelterAddress={address} lat={lat} lng={lng}/>
-            </div>
+              </div>
+            </InstantSearch>
+          </div>
+        </div>
+        <div classname="col-md-6">
+          <LocationHeader shelterAddress={address} />
+          <GoogleMap shelterAddress={address} lat={lat} lng={lng} />
         </div>
       </div>
     </div>
