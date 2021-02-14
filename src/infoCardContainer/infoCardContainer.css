@@ -5,6 +5,7 @@
   border: 20px #000d53 solid;
   width: 50vw;
   overflow: auto;
+  overflow-x: hidden;
   border-radius: 9px;
   /* margin-top: 20px; */
 }
