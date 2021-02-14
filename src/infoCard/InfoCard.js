@@ -9,9 +9,9 @@ const InfoCard = ({
   onClick,
 }) => {
 
-    var str1 = "gray";
-    var str2 = "gray";
-    var str3 = "gray";
+    var str1 = "#D7D7D7";
+    var str2 = "#D7D7D7";
+    var str3 = "#D7D7D7";
     if(shelterOccupancy == 1) {
       str1 = "#A9E062";
       str2 = "#D7D7D7";
