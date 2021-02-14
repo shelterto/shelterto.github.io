@@ -1,18 +1,18 @@
-.root{
-  --primary-color: #FFFCF5;
-  --secondary--color: #000D53;
-  --lightblue: #7D9AFF;
+.root {
+  --primary-color: #fffcf5;
+  --secondary--color: #000d53;
+  --lightblue: #7d9aff;
 }
 
 @media (prefers-color-scheme: dark) {
-  root:{
-
+  root: {
   }
 }
 
 .App {
   /* text-align: center; */
   background-color: var(--primary-color);
+  font-family: "Work Sans", sans-serif;
 }
 
 .App-logo {
