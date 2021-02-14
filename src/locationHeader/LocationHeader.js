@@ -4,9 +4,9 @@ import "../locationHeader/LocationHeader.css";
 const LocationHeader = ({ shelterAddress, link }) => {
   return (
     <div className="locationHeader">
-      <h1>{shelterAddress}</h1>
+      <h1 className="addressText">{shelterAddress}</h1>
       <a  
-      class="submitBtn googleMapsBtn"
+      class="googleMapsBtn"
       href={link}
       target='_blank'
       >

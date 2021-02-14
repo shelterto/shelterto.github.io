@@ -16,9 +16,18 @@
 }
 
 .googleMapsBtn{
+  background-color: #7d9aff;
+  border: none;
+  color: white;
+  font-size: 20px !important;
+  border-radius: 7px;
   width: fit-content;
   height: fit-content;
   padding: 20px 40px;
   font-size: 20px !important;
 
+}
+
+.addressText{
+  padding-bottom: 20px ;
 }
