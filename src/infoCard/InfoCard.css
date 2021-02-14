@@ -27,9 +27,8 @@ h3 {
 }
 
 .occupancyGrid {
-  /*This Aligns the occupancy to the left*/ /*LONG NAMES FOR FUCKING UHHHHHHHHHHHHHHHHHHHHHHHHH HOMELESS SHELTERS BREAKS CODE*/
+  /*This Aligns the occupancy to the left*/ 
   text-align: left;
-
   border-left: 3px #000d53 solid;
 }
 

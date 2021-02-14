@@ -1,7 +1,7 @@
 .infoCardContainer {
   /*changes the stype of the background LARGE BLUE SQUARE*/
   background-color: #000d53;
-  max-height: 90vh;
+  max-height: 80vh;
   border: 20px #000d53 solid;
   width: 50vw;
   overflow: auto;
