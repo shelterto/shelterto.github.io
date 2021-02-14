@@ -26,7 +26,10 @@ Geocode.setLocationType("ROOFTOP");
 Geocode.enableDebug();
 
 
-const searchClient = algoliasearch('A8LQ861XZY', '0b476f98a04f33f57d6f0b459a403111');
+const searchClient = algoliasearch(
+  "A8LQ861XZY",
+  "0b476f98a04f33f57d6f0b459a403111"
+);
 const SearchBox = ({ currentRefinement, isSearchStalled, refine }) => (
   <form noValidate action="" role="search">
     <input
