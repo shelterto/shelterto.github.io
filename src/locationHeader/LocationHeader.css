@@ -1,0 +1,11 @@
+.locationHeader{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #000D53;
+    width: 643px;
+    height: 245px;
+    color: white;
+    margin-left: 50px;
+    text-align: center;
+}

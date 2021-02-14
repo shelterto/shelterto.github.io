@@ -38,15 +38,15 @@
 
 .occupancygreen{
     padding-right: 2%;
-    color: green;
+    fill: green;
 }
 
 .occupancyred{
     padding-right: 2%;
-    color: red;
+    fill: red;
 }
 
 .occupancygray{
     padding-right: 2%;
-    color: gray;
+    fill: gray;
 }
