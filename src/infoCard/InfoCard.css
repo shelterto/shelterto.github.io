@@ -5,7 +5,12 @@
   height: 20%;
   border-radius: 7px;
   padding: 5%;
-  margin-top: 5%;
+  /* margin-top: 5%; */
+  color: #000d53;
+}
+.override {
+  border: none !important;
+  margin-right: -5px !important;
 }
 h1 {
   font-size: 30px !important;
@@ -25,12 +30,12 @@ h3 {
   /*This Aligns the occupancy to the left*/ /*LONG NAMES FOR FUCKING UHHHHHHHHHHHHHHHHHHHHHHHHH HOMELESS SHELTERS BREAKS CODE*/
   text-align: left;
 
-  border-left: 4px #000d53 solid;
+  border-left: 3px #000d53 solid;
 }
 
-.col-md-3 {
-}
-@media (max-width: 800px) {
+/* .col-md-3 {
+} */
+@media (max-width: 900px) {
   .infoCard {
     width: 80vw;
   }

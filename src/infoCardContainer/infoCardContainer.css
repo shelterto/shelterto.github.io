@@ -3,11 +3,22 @@
   background-color: #000d53;
   max-height: 90vh;
   border: 20px #000d53 solid;
-  width: fit-content;
+  width: 50vw;
   overflow: auto;
   border-radius: 9px;
+  /* margin-top: 20px; */
 }
-
+.resetQuery {
+  display: none;
+  border: none;
+  background: none;
+  color: #000d53;
+  font-size: 20px;
+  margin-left: 10px;
+}
+.ais-InfiniteHits-list {
+  padding-left: 0;
+}
 /* width */
 #like-scroll::-webkit-scrollbar {
   width: 9px;
@@ -29,6 +40,19 @@
   border-radius: 7px;
   background-color: lightgrey;
   border: none;
+  width: 300px;
+  height: 35px;
+  margin-left: 0;
+  padding: 10px;
+  margin-bottom: 20px;
+}
+@media (max-width: 900px) {
+  .searchBox {
+    width: 40vw;
+  }
+  .infoCardContainer {
+    width: 90vw;
+  }
 }
 
 .ais-InfiniteHits-loadMore {
