@@ -1,11 +1,13 @@
-.locationHeader{
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #000D53;
-    width: 643px;
-    height: 245px;
-    color: white;
-    margin-left: 50px;
-    text-align: center;
+.locationHeader {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #000d53;
+  width: 643px;
+  height: 245px;
+  color: white;
+  margin-left: 50px;
+  text-align: center;
+  padding: 20px 50px;
+  border-radius: 0 0 7px 7px;
 }
