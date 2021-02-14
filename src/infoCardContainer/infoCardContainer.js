@@ -50,6 +50,8 @@ const CustomSearchBox = connectSearchBox(SearchBox);
 const InfoCardContainer = () => {
   const [items, setItems] = useState([]);
   const [address, setAddress] = useState("Please select a location");
+  const [shelterName, setShelterName] = useState("");
+  const [link, setLink] = useState("");
   const [lat, setLat] = useState(0);
   const [lng, setLng] = useState(0);
 
@@ -65,13 +67,16 @@ const InfoCardContainer = () => {
     console.log(items);
   }, []);
 
-  const changeLocationHeader = (address) => {
+  const changeLocationHeader = (address,shelterName, link) => {
     Geocode.fromAddress(address).then((response) => {
       const { lat, lng } = response.results[0].geometry.location;
       setLat(lat);
       setLng(lng);
       setAddress(address);
+      setShelterName(shelterName)
+      setLink(link)
     });
+    console.log(link)
     console.log(lat, lng);
     console.log(address);
   };
@@ -85,7 +90,7 @@ const InfoCardContainer = () => {
           shelterType={props.hit.SECTOR}
           shelterOccupancy={props.hit.OCCUPANCY}
           shelterCapacity={props.hit.CAPACITY}
-          onClick={() => changeLocationHeader(props.hit.SHELTER_ADDRESS)}
+          onClick={() => changeLocationHeader(props.hit.SHELTER_ADDRESS, props.hit.FACILITY_NAME, props.hit.URL)}
         />
       </div>
     );
@@ -111,8 +116,8 @@ const InfoCardContainer = () => {
           </div>
         </div>
         <div classname="col-md-6">
-          <LocationHeader shelterAddress={address} />
-          <GoogleMap shelterAddress={address} lat={lat} lng={lng} />
+          <LocationHeader shelterAddress={address} link={link} />
+          <GoogleMap shelterAddress={address} lat={lat} lng={lng} shelterName={shelterName} />
         </div>
       </div>
     </div>
