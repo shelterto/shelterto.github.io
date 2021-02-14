@@ -24,3 +24,7 @@
 #like-scroll::-webkit-scrollbar-thumb {
 background: #7D9AFF;
 }
+
+.searchBox{
+    background-color: red;
+}
